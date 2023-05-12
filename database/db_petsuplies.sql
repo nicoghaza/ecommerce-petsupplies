@@ -216,7 +216,7 @@ ALTER TABLE `customer`
 --
 -- Indexes for table `order`
 --
-ALTER TABLE `order`
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `order_number` (`order_number`),
   ADD KEY `fk_order_customer` (`customer_id`),
@@ -270,7 +270,7 @@ ALTER TABLE `customer`
 --
 -- AUTO_INCREMENT for table `order`
 --
-ALTER TABLE `order`
+ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
@@ -310,7 +310,7 @@ ALTER TABLE `customer`
 --
 -- Constraints for table `order`
 --
-ALTER TABLE `order`
+ALTER TABLE `orders`
   ADD CONSTRAINT `fk_order_customer` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_order_product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
